@@ -1,0 +1,113 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contect</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<style>
+    
+    body{
+          
+          background-image: url(tiles.jpg);
+          background-attachment: fixed;
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          
+          
+        }
+    </style>
+</head>
+<body style="background-color:whitesmoke;"> 
+
+
+  <!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<br>
+<script>
+$(function(){
+  $("#nav-placeholder").load("NavigationBar.html");
+});
+</script>
+<!--end of Navigation bar--> 
+
+  <br>
+  <div class="container mt-3 shadow-lg" style="width:50%;background-image: url(diamond.png);">
+        
+        
+        <div class="d-inline-flex mb-3">
+          <div class="p-2 shadow-lg bg-info" style="width:45%;height:60%;position: center;">
+            
+                <center><h2>Contact Details</h2></center>
+                  <br>
+                  <h5>Name:- Kanak Tyagi</h5>
+                  <br>
+                  <h5>Email:- kanakdeve@gmail.com</h5>
+                  <br>
+                  <h5>Address:-  C-1 second floor, New era apartment, Bangalore</h5>
+                  
+            
+            </div>
+           
+            
+             
+            <div class="p-2 bg-warning" style="height:30%; width:40%" >
+             
+            <form method="post" autocomplete="off" name="google-sheet"> 
+                <div class="form-group">
+             
+                <label for="name"></label>
+                <input type="text" class="form-control" name="name" placeholder="Name">
+               
+            
+                <label for="email"></label>
+                <input type="email" class="form-control" placeholder="Email" name="email" id="email">
+    
+               <label for="subject"></label>
+                <input type="text" class="form-control" placeholder="Subject" name="subject" id="subject">
+                 <label for="message"></label>
+                <textarea name="message" id="message" class="form-control" placeholder="message"></textarea>
+                 <br>
+                <label for="submit"></label>
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </div>
+            </form>
+         </div>
+         
+        </div>
+
+    </div>  
+
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz_nbzxJDXXEFQVGZRv0LYVGJB5TTaL1LE3jKbcH8PAYD_xnunaYHohzqum9Q4nOPft/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+       
+    
+</body>
+</html>

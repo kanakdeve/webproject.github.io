@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
+
+  <style>
+h1 {
+  text-shadow: 2px 2px 5px yellow;
+}
+    
+body{
+          
+          background-image: url(box.png);
+          background-attachment: fixed;
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          
+          
+        }
+        
+        
+  </style>   
+
+</head>
+<body >
+  <!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+<br>
+<script>
+$(function(){
+  $("#nav-placeholder").load("NavigationBar.html");
+});
+</script>
+<!--end of Navigation bar--> 
+
+<br>
+  <center>
+    <h1>About My Specialization</h1>
+  </center>
+
+<script>
+var i = 0;
+var txt = 'I am know html,css and little bit javascript .I try to read and learn about new web frameworks and design'
+var speed = 30;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo4").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+<br>
+ 
+  <div class="container shadow-lg">
+      
+    <center>
+    <div class="card img-fluid " style="width:500px">
+      
+      <img class="card-img-top" src="background.jpg" alt="Card image" style="width:100%">
+      
+      
+      <div class="card-img-overlay">
+        <h4 class="card-title">ABOUT IT </h4>
+        <h4 class="card-text" id="demo4" style="font-size: 20px;color:red;font-style: normal;
+        text-shadow: royalblue;"></h4>
+        <center>
+        <button onclick="typeWriter()" style="width:100px;height:50px; top:50px;"  class="btn btn-primary mb-3">Click me</button>
+        </center>
+      </div>
+
+      </div>
+      <center>
+        
+      <p>Download my CV From here </p>
+      <button  style="width:100px;height:50px; top:50px;left: 500px;"  class="btn btn-primary mb-3">Download</button>
+      </center>
+    </center>
+    </div>
+
+  
+</body>
+</html>

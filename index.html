@@ -1,0 +1,96 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script>
+
+function showPassword() {
+  var x = document.getElementById("pswd1");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+  }
+    function matchPassword() {  
+    var pw1 = document.getElementById("pswd1").value;  
+    var pw2 = document.getElementById("pswd2").value;  
+    if(pw1 != pw2) {
+      document.getElementById("message2").innerHTML = "**Passwords are not same";
+      return false;
+    } else {
+      alert ("Your password created successfully");
+      //document.write("JavaScript form has been submitted successfully");
+      
+      
+    }
+  }  
+</script>
+
+<style>
+
+h3 {
+  color: azure;
+  text-shadow: 2px 2px 5px yellow;
+}
+  body{
+          
+          background-image: url(milkyway.jpg);
+          background-attachment: fixed;
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          
+          
+        }
+        
+</style>
+</head>
+<body> 
+    <div class="container  mt-5 " style="height: 400px;width: 400px">
+       
+        <center>
+        <div class="d-flex bg-transparent" style="height: 50%;width:85%;">
+          
+          <div class="p-5 flex-fill shadow-lg bg-ra" style="text-align: center;font-style: italic; font-size: medium;color: rgb(7,7,7);"><h3>Welcome</h3>
+        
+            <form onsubmit ="return matchPassword()" action="Display.html"> 
+            <div class="form-group">
+         
+            <label for="email"></label>
+            <input type="email" class="form-control" placeholder="Email" id="email" value="" autofocus required>
+
+            <label for="password"></label>
+            <input type="password" class="form-control" placeholder="Set Password" id="pswd1" value="" autofocus required>
+            
+            
+            <input type="checkbox" onclick="showPassword()">
+            
+            <label for="confirm"></label>
+            <input type="password" class="form-control" placeholder="Confirm Password" id="pswd2"  autofocus required>
+            <span id = "message2" style="color:red"> </span> 
+            
+            
+            <label for="reset"></label>
+            <input type="reset" class="form-control" placeholder="Re set" >
+            </div>
+            <br>
+            <label for="signIn"></label>
+            <button type="submit"  class="btn btn-primary mb-2">Sign-in</button>
+            
+            
+        </form>
+        </div>
+        </div>
+      </center>
+    </div>
+</body>
+</html>
+
+
+ 
